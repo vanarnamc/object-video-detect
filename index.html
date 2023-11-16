@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Detection Grid</title>
+    <style>
+       .video-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    width: 100vw;
+    height: 100vh;
+}
+
+.video-container {
+    position: relative;
+    z-index: 1; /* Set the z-index for the video container */
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif; /* Change the font family */
+    font-size: 20px; /* Change the font size */
+}
+
+.text-style {
+    background-color:#000000; /* Set the background color as needed */
+    color: #ffffff; /* Set the text color as needed */
+    font-size: 20px; /* Set the font size as needed */
+    font-family: Arial, sans-serif; /* Set the font family as needed */
+    text-transform: uppercase; /* Convert text to uppercase */
+    text-align: center; /* Center-align the text */
+    z-index: 999999;
+    margin: 0;
+    padding: 0;
+    /* Add any other styles you want to apply */
+}
+
+    </style>
+</head>
+<body>
+    <div class="video-grid">
+      <div class="video-container">
+    <video id="video1" class="video" autoplay playsinline loop muted></video>
+    <canvas id="canvas1" class="canvas"></canvas>
+    <div class="text-container" id="text1"></div> <!-- Add this text container -->
+</div>
+<div class="video-container">
+    <video id="video2" class="video" autoplay playsinline loop muted></video>
+    <canvas id="canvas2" class="canvas"></canvas>
+    <div class="text-container" id="text2"></div> <!-- Add this text container -->
+</div>
+<div class="video-container">
+    <video id="video3" class="video" autoplay playsinline loop muted></video>
+    <canvas id="canvas3" class="canvas"></canvas>
+    <div class="text-container" id="text3"></div> <!-- Add this text container -->
+</div>
+<div class="video-container">
+    <video id="video4" class="video" autoplay playsinline loop muted></video>
+    <canvas id="canvas4" class="canvas"></canvas>
+    <div class="text-container" id="text4"></div> <!-- Add this text container -->
+</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <script src="webcam.js"></script>
+</body>
+</html>
